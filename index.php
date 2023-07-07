@@ -22,7 +22,7 @@
         public function getOscar(){
             return $this->oscar;
         }
-        
+
     }
 
 
@@ -31,13 +31,17 @@
     $alien->title ="Alien";
     $alien->genre ="Science fiction";
     $alien->director ="Ridley Scott";
-    $alien->starring ="Sigourney Weaver";
+    $alien->starring =["Tom Skerritt","Sigourney Weaver","Veronica Cartwright","Harry Dean Stanton","Ian Holm","Yaphet Kotto","John Hurt"];
     $alien->date = 1979;
     $alien->language ="English";
     $alien->oscar = true;
     $alien->setOscar(true);
-    var_dump($alien);
-    echo $alien->getOscar();
+
+    echo $alien->title. "<br/>". $alien->genre. "<br/>". $alien->director. "<br/>".$alien->date. "<br/>".$alien->language. "<br/>".$alien->getOscar(). "<br/>";
+
+    foreach ($alien->starring as $actor){
+        echo  $actor. "<br/>";
+       }
 
 
     // secondo film
@@ -45,13 +49,20 @@
     $tremors->title ="Tremors";
     $tremors->genre ="Horror";
     $tremors->director ="Ron Underwood";
-    $tremors->starring ="Kevin Bacon";
+    $tremors->starring =["Kevin Bacon", "Fred Ward","Finn Carter","Michael Gross","Reba McEntire",];
     $tremors->date = 1990;
     $tremors->language ="English";
     $tremors->oscar = false;
     $tremors->setOscar(true);
-    var_dump($tremors);
-    echo $tremors->getOscar();
+    
+   
+    echo "<br/>". "<br/>". "<br/>". $tremors->title. "<br/>". $tremors->genre. "<br/>". $tremors->director. "<br/>" .$tremors->date. "<br/>".$tremors->language. "<br/>".$tremors->getOscar(). "<br/>";
+    
+   foreach ($tremors->starring as $actor){
+    echo  $actor. "<br/>";
+   }
+
+
 
 
     
