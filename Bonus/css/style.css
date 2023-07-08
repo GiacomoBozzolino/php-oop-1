@@ -3,3 +3,46 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body{
+    background-color: #141414;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    color: white;
+    font-size: 60px;
+}
+
+h2{
+    font-size: 45px;
+    font-weight: 700;
+}
+h5{
+    font-weight: 700;
+
+}
+
+ul{
+    list-style-type: none;
+   
+}
+
+
+li{
+    padding: 10px 0;
+}
+
+li div{
+    font-size: 17px;
+}
+
+img{
+    max-width: 350px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+header{
+    height: 100px;
+}

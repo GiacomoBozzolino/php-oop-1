@@ -7,6 +7,7 @@ class Movie {
     public $date;
     public $language;
     public $oscar;
+    public $poster;
 
     function __construct($title, $genre, $director, $starring, $date, $language, $oscar){
         $this-> title= $title;
@@ -21,10 +22,10 @@ class Movie {
     // funzione per attribuire il premio
     public function setOscar ($oscar) {
         if ($this->oscar === $oscar) {
-            $this->oscar = 'Ha vinto un Oscar';
+            $this->oscar = 'Academy Award–winning';
         }
         else {
-            $this->oscar = 'Non ha vinto un Oscar';
+            $this->oscar = 'No Award–winning';
         }
     }
 
