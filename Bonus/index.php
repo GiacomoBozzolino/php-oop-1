@@ -1,60 +1,8 @@
 <?php
-
-    class Movie {
-        public $title;
-        public $genre;
-        public $director;
-        public $starring;
-        public $date;
-        public $language;
-        public $oscar;
-
-        function __construct($title, $genre, $director, $starring, $date, $language, $oscar){
-            $this-> title= $title;
-            $this-> genre= $genre;
-            $this-> director= $director;
-            $this-> starring= $starring;
-            $this-> date= $date;
-            $this-> language= $language;
-            $this-> oscar= $oscar;
-        }    
-            
-        // funzione per attribuire il premio
-        public function setOscar ($oscar) {
-            if ($this->oscar === $oscar) {
-                $this->oscar = 'Ha vinto un Oscar';
-            }
-            else {
-                $this->oscar = 'Non ha vinto un Oscar';
-            }
-        }
-
-        public function getOscar(){
-            return $this->oscar;
-        }
-
-    }
-
-
-    // primo film
-    $alien = new Movie('Alien',['Science fiction','Horror'],'Ridley Scott',['Tom Skerritt','Sigourney Weaver','Veronica Cartwright','Harry Dean Stanton','Ian Holm','Yaphet Kotto','John Hurt'], 1979,'English', true );
-    $alien->setOscar(true);
-
-    // secondo film
-    $tremors = new Movie('Tremors',["Horror","Monster", "Commedy"],'Ron Underwood',["Kevin Bacon", "Fred Ward","Finn Carter","Michael Gross","Reba McEntire"], 1990,'English', false );
-    $tremors->setOscar(true);
-  
-
-// realizzo un array per i film
-$movies =[
-    $alien,
-    $tremors,
-    
-];
-
-
-    
-       
+    include __DIR__ .'/models/classes.php';
+    include __DIR__ .'/models/db.php';
+   
+   
 ?>
 
 <!DOCTYPE html>
