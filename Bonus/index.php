@@ -16,10 +16,9 @@
             $this-> starring= $starring;
             $this-> date= $date;
             $this-> language= $language;
-            $this-> language= $language;
-
-        }
-        
+            $this-> oscar= $oscar;
+        }    
+            
         // funzione per attribuire il premio
         public function setOscar ($oscar) {
             if ($this->oscar === $oscar) {
@@ -38,48 +37,74 @@
 
 
     // primo film
-    $alien = new Movie('Alien',['Science fiction','Horror'],'Ridley Scott',['Tom Skerritt','Sigourney Weaver','Veronica Cartwright','Harry Dean Stanton','Ian Holm','Yaphet Kotto','John Hurt'], 1979,'English',true );
-    // $alien->title ="Alien";
-    // $alien->genre =["Science fiction","Horror"];
-    // $alien->director ="Ridley Scott";
-    // $alien->starring =["Tom Skerritt","Sigourney Weaver","Veronica Cartwright","Harry Dean Stanton","Ian Holm","Yaphet Kotto","John Hurt"];
-    // $alien->date = 1979;
-    // $alien->language ="English";
-    // $alien->oscar = true;
+    $alien = new Movie('Alien',['Science fiction','Horror'],'Ridley Scott',['Tom Skerritt','Sigourney Weaver','Veronica Cartwright','Harry Dean Stanton','Ian Holm','Yaphet Kotto','John Hurt'], 1979,'English', true );
     $alien->setOscar(true);
 
-    // QUESTI ECHO DA SOSTITUIRE CON UNA STRUTTURA IN HTML
-    echo $alien->title. "<br/>";
-    foreach ($alien->genre as $genre){
-        echo  $genre. "<br/>";
-       }
-    echo $alien->director. "<br/>".$alien->date. "<br/>".$alien->language. "<br/>".$alien->getOscar(). "<br/>";
-
-    foreach ($alien->starring as $actor){
-        echo  $actor. "<br/>";
-       }
-       
-
     // secondo film
-    $tremors = new Movie('Tremors',["Horror","Monster", "Commedy"],'Ron Underwood',["Kevin Bacon", "Fred Ward","Finn Carter","Michael Gross","Reba McEntire"], 1990,'English',false );
-    // $tremors->title ="Tremors";
-    // $tremors->genre =["Horror","Monster", "Commedy"];
-    // $tremors->director ="Ron Underwood";
-    // $tremors->starring =["Kevin Bacon", "Fred Ward","Finn Carter","Michael Gross","Reba McEntire"];
-    // $tremors->date = 1990;
-    // $tremors->language ="English";
-    // $tremors->oscar = false;
+    $tremors = new Movie('Tremors',["Horror","Monster", "Commedy"],'Ron Underwood',["Kevin Bacon", "Fred Ward","Finn Carter","Michael Gross","Reba McEntire"], 1990,'English', false );
     $tremors->setOscar(true);
-    
-    // QUESTI ECHO DA SOSTITUIRE CON UNA STRUTTURA IN HTML
-    echo "<br/>"."<br/>".$tremors->title. "<br/>";
-    foreach ($tremors->genre as $genre){
-        echo  $genre. "<br/>";
-       }
-    echo $tremors->director. "<br/>".$tremors->date. "<br/>".$tremors->language. "<br/>".$tremors->getOscar(). "<br/>";
+  
 
-    foreach ($tremors->starring as $actor){
-        echo  $actor. "<br/>";
-       }
+// realizzo un array per i film
+$movies =[
+    $alien,
+    $tremors,
+    
+];
+
+
+    
        
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie OOP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <?php foreach ( $movies as $movie) { ?>
+                    <ul>
+                        <li>
+                            <?php echo $movie->title ?>
+                        </li>
+                        <?php foreach ($movie->genre as $genre) { ?> 
+                            <li>
+                                <?php echo $genre;?>
+                            </li>
+                        <?php } ?>
+                        <li>
+                            <?php echo $movie->director ?>
+                        </li>
+                        <?php foreach ($movie->starring as $actor) { ?> 
+                            <li>
+                                <?php echo $actor;?>
+                            </li>
+                        <?php } ?>
+                        <li>
+                            <?php echo $movie->date?>
+                        </li>
+                        <li>
+                            <?php echo $movie->language?>
+                        </li>
+                        <li>
+                            <?php echo $movie->oscar?>
+                        </li>
+                    </ul>
+                    <?php } ?>
+                </div>
+            </div>
+
+
+        </div>
+
+        
+    </body>
+</html>
